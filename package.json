@@ -8,8 +8,11 @@
     "android-clean": "cd android && ./gradlew clean"
   },
   "dependencies": {
+    "@terrylinla/react-native-sketch-canvas": "^0.8.0",
+    "install": "^0.12.2",
     "react": "16.6.3",
     "react-native": "0.58.0",
+    "react-native-camera": "1.1.4",
     "react-native-camera-kit": "^7.3.3",
     "react-native-gesture-handler": "^1.0.15",
     "react-native-indicators": "^0.13.0",

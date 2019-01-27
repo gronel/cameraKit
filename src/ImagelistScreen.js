@@ -8,6 +8,7 @@ import {
   Image
 } from "react-native";
 
+let datalist = [];
 export default class ImagelistScreen extends Component {
   constructor(props) {
     super(props);
@@ -15,7 +16,8 @@ export default class ImagelistScreen extends Component {
       imglst: []
     };
 
-    this.onLoadMenu();
+    datalist = this.props.navigation.getParam("image", "NO-ID");
+    // this.onLoadMenu();
   }
 
   _isMounted = false;
@@ -39,9 +41,9 @@ export default class ImagelistScreen extends Component {
   render() {
     return (
       <View>
-        <Text>{this.state.imglst}</Text>
+        <Text>{datalist}</Text>
 
-        {this.state.imglst.map((item, key) => (
+        {datalist.map((item, key) => (
           <Image
             key={key}
             source={{ uri: "file:///" + item.id }}

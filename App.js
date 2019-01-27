@@ -12,6 +12,8 @@ import {
 import ImageView from "./src/ImageviewScreen";
 import CameraScreen from "./src/CameraScreen";
 import ImageList from "./src/ImagelistScreen";
+import Convase from "./src/Oncanvas"
+
 import AlbumsScreen from "./src/AlbumsScreen";
 import GalleryScreen from "./src/GalleryScreen";
 import BarcodeScreen from "./src/BarcodeScreen";
@@ -28,10 +30,11 @@ const MainStackNavigator = createStackNavigator(
   {
     ImageView: ImageView,
     CameraScreen: CameraScreen,
-    ImageList: ImageList
+    ImageList: ImageList,
+    Convase:Convase
   },
   {
-    initialRouteName: "ImageList"
+    initialRouteName: "ImageView"
   }
 );
 

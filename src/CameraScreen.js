@@ -8,15 +8,21 @@ export default class CameraScreen extends Component {
     console.log(captureImages);
   }
 
-  async onDoneCapture(event) {
+  onDoneCapture(event) {
     const captureImages = JSON.stringify(event.captureImages);
     console.log("ID:" + this.props.navigation.getParam("itemId", "NO-ID"));
     console.log(captureImages);
-    await AsyncStorage.setItem(
-      this.props.navigation.getParam("itemId", "NO-ID"),
-      JSON.stringify(captureImages)
-    );
-    this.props.navigation.navigate("ImageList");
+    //let data = [];
+
+    // captureImages.forEach(element => {
+    //   data.push(element.id);
+    // });
+
+    // await AsyncStorage.setItem(
+    //   this.props.navigation.getParam("itemId", "NO-ID"),
+    //   JSON.stringify(data)
+    // );
+    this.props.navigation.navigate("ImageList", { image: captureImages });
   }
 
   render() {
