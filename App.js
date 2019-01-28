@@ -31,7 +31,7 @@ const MainStackNavigator = createStackNavigator(
     ImageList: ImageList
   },
   {
-    initialRouteName: "ImageList"
+    initialRouteName: "ImageView"
   }
 );
 

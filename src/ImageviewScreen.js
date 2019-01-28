@@ -43,7 +43,7 @@ export default class ImageviewScreen extends Component {
       <Image
         key={key}
         source={{
-          uri: "file:///" + item.id
+          uri: this.state.imageSource
         }}
         style={{ width: 100, height: 100 }}
       />
