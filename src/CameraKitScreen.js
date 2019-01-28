@@ -52,7 +52,7 @@ export default class example extends Component {
           >
             <Text style={styles.buttonText}>Barcode scanner Screen</Text>
           </TouchableOpacity>
-
+         
           <TouchableOpacity
             onPress={() => this.setState({ example: CameraScreen })}
           >

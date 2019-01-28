@@ -15,7 +15,9 @@ import {
 export default class ImageviewScreen extends Component {
   constructor(props) {
     super(props);
-
+    this.state = {
+      imageSource: "https://facebook.github.io/react/logo-og.png"
+    };
     PermissionsAndroid.requestMultiple([
       PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
       PermissionsAndroid.PERMISSIONS.READ_PHONE_STATE,
@@ -37,7 +39,9 @@ export default class ImageviewScreen extends Component {
   onCapture = () => {
     this.props.navigation.navigate("CameraScreen", { itemId: "imgSam1" });
   };
-
+  onCanvas = () => {
+    this.props.navigation.navigate("Convase");
+  };
   imgRender = () => {
     return this.state.imageList.map((item, key) => (
       <Image
@@ -63,7 +67,7 @@ export default class ImageviewScreen extends Component {
         <View style={{ flex: 1, alignItems: "center" }}>
           <Image
             source={{
-              uri: "file:///storage/emulated/0/Pictures/1548500866940.jpg"
+              uri: this.state.imageSource
             }}
             style={{ width: 100, height: 100 }}
           />
@@ -73,7 +77,9 @@ export default class ImageviewScreen extends Component {
           <TouchableOpacity onPress={this.onCapture}>
             <Text style={styles.buttonText}>Barcode scanner Screen</Text>
           </TouchableOpacity>
-
+          <TouchableOpacity onPress={this.onCanvas}>
+            <Text style={styles.buttonText}>sketch-canvas</Text>
+          </TouchableOpacity>
           <TouchableOpacity onPress={this.onCapture}>
             <Text style={styles.buttonText}>Camera Screen</Text>
           </TouchableOpacity>
